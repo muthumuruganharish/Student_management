@@ -3,12 +3,54 @@ import Button from '../../../Components/Button';
 import Card from '../../../Components/Card'
 import Input from '../../../Components/Input';
 import { Navigate, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import Axios from "../../../Axios"
 
 import { UserPlus, User, Mail, Lock } from 'lucide-react';
 
 const StudentSignup = () => {
 
-  const navigate=useNavigate()
+  const[name,setName]=useState("")
+  const[reg,setReg]=useState(0)
+  const[email,setEmail]=useState("")
+  const[password,setPassword]=useState("")
+  const[conPass,setConpass]=useState("")
+
+
+    const navigate=useNavigate()
+
+
+    const create=async(e)=>{
+      e.preventDefault()
+
+      if(password===conPass){
+
+        try{
+
+          const res= await Axios.post("/studentsignup",{
+            name,
+            reg,
+            email,
+            password
+
+          })
+
+          alert("account created for Students")
+          navigate("/")
+        }
+
+        catch(err){
+
+          console.log(err)
+
+        }
+
+      }
+      else{
+        alert("passwor mismatch")
+      }
+
+    }
 
   return (
     <div className="min-h-screen w-full flex items-center justify-center bg-gray-50 p-4">
@@ -25,36 +67,44 @@ const StudentSignup = () => {
           </p>
         </div>
 
-        <div className="space-y-4">
+        <form onSubmit={create} className="space-y-4">
           <Input
+
             label="Full Name"
             type="text"
             placeholder="John Doe"
+            onChange={(e)=>setName(e.target.value)}
           />
 
           <Input
             label="Register Number"
             type="number"
             placeholder="Enter your Register Number"
+            onChange={(e)=>setReg(e.target.value)}
+
             
           />
           <Input
             label="Email Address"
             type="email"
             placeholder="name@example.com"
+            onChange={(e)=>setEmail(e.target.value)}
           />
           <Input
             label="Password"
             type="password"
+            autoComplete="new-password"
             placeholder="••••••••"
+            onChange={(e)=>setPassword(e.target.value)}
           />
           <Input
             label="Confirm Password"
             type="password"
             placeholder="••••••••"
+            onChange={(e)=>setConpass(e.target.value)}
           />
 
-          <Button onClick={()=>navigate("/")} className="w-full mt-4">
+          <Button type="submit" className="w-full mt-4">
             Create Account
           </Button>
 
@@ -64,7 +114,7 @@ const StudentSignup = () => {
               Login
             </a>
           </p>
-        </div>
+        </form>
       </Card>
     </div>
   );
