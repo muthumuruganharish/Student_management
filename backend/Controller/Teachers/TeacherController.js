@@ -1,4 +1,5 @@
-const teacherData=require("../Model/Teachers")
+const teacherData=require("../../Model/Teachers")
+const bycrypt=require("bcryptjs")
 
 const createUser=async(req,res)=>{
 
@@ -6,10 +7,13 @@ const createUser=async(req,res)=>{
 
       const{name,email,password}=req.body
       console.log("req.body",req.body)
+      const hash=await bycrypt.hash(password,10)
+
+
       const table=await teacherData.create({
         name,
         email,
-        password,
+        password:hash
 
       })
 
