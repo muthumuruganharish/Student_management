@@ -18,8 +18,16 @@ const Teacher = new mongoose.Schema({
         type: String,
         required: true
     },
+    otp: {
+        type: String,
 
-    
-},{timestamps:true})
+    }
+    ,
+    otpExpiry: {
+        type: Date
+    }
 
-module.exports=mongoose.model("Teacher",Teacher)
+
+}, { timestamps: true })
+
+module.exports = mongoose.model("Teacher", Teacher)

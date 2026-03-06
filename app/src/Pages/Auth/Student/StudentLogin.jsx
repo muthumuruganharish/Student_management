@@ -84,7 +84,7 @@ const StudentLogin = () => {
                     />
 
                     <div className="flex items-center justify-end">
-                        <a href="#" className="text-sm font-medium text-blue-600 hover:text-blue-700">
+                        <a href="#" onClick={()=>navigate("/semail")} className="text-sm font-medium text-blue-600 hover:text-blue-700">
                             Forgot password?
                         </a>
                     </div>
