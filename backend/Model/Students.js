@@ -22,7 +22,8 @@ const Students = new mongoose.Schema({
         trim: true,
     },
     otp: {
-        type: String
+        type: String,
+         trim: true,
     },
     otpExpiry: {
         type: Date

@@ -1,6 +1,41 @@
 import React from 'react'
+import { useState } from 'react'
+import Axios from "../../../Axios"
+import { useLocation, useNavigate } from 'react-router-dom'
+
 
 const TeacherOtp = () => {
+
+  const[otp,setOtp]=useState("")
+  const navigate=useNavigate()
+  const location=useLocation()
+  const email=location.state?.email
+
+  const sendOtp=async(e)=>{
+    e.preventDefault()
+
+
+    try{
+
+      const res=await Axios.post("/totp",{
+        email,
+        otp
+      })
+      alert("Otp Sent")
+      navigate("/treset",{
+        state:{email}
+      })
+
+    }
+    catch(err){
+      alert(err.response?.data?.message)
+
+    }
+  }
+
+
+
+
   return (
     <div>
 
@@ -33,7 +68,7 @@ const TeacherOtp = () => {
         </p>
 
         {/* OTP Input */}
-        <div className="space-y-5">
+        <form onSubmit={sendOtp} className="space-y-5">
           <input
             type="text"
             placeholder="Enter OTP"
@@ -41,7 +76,8 @@ const TeacherOtp = () => {
             className="w-full text-center text-lg tracking-widest py-2.5 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
           />
 
-          <button
+          <button type='submit'
+            onClick={(e)=>setOtp(e.targer.value)}
             className="w-full bg-purple-600 hover:bg-purple-700 text-white py-2.5 rounded-lg transition duration-200"
           >
             Verify OTP
@@ -50,7 +86,7 @@ const TeacherOtp = () => {
           <p className="text-sm text-center text-gray-500">
             Didn’t receive OTP? <span className="text-purple-600 cursor-pointer">Resend</span>
           </p>
-        </div>
+        </form>
 
       </div>
     </div>

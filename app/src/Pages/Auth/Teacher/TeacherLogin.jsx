@@ -72,6 +72,12 @@ const TeacherLogin = () => {
                         placeholder="••••••••"
                         onChange={(e) => setPassword(e.target.value)}
                     />
+                      <div className="flex items-center justify-end">
+                        <a href="#" onClick={()=>navigate("/temail")} className="text-sm font-medium text-blue-600 hover:text-blue-700">
+                            Forgot password?
+                        </a>
+                    </div>
+
 
                     <Button type="submit" variant="primary" className="w-full bg-indigo-600 hover:bg-indigo-700 hover:shadow-indigo-500/30">
                         Teacher Log In

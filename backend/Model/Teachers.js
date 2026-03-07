@@ -20,6 +20,8 @@ const Teacher = new mongoose.Schema({
     },
     otp: {
         type: String,
+        trim: true
+
 
     }
     ,
