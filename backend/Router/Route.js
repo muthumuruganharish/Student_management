@@ -23,6 +23,6 @@ router.post("/sotp",verifyOtp)
 router.put("/reset",reset)
 router.post("/temail",verifyEmail)
 router.post("/totp",Otp)
-router.put("treset",tReset)
+router.put("/treset",tReset)
 
 module.exports=router

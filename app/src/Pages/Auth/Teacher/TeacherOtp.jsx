@@ -70,6 +70,7 @@ const TeacherOtp = () => {
         {/* OTP Input */}
         <form onSubmit={sendOtp} className="space-y-5">
           <input
+             onChange={(e) => setOtp(e.target.value)}
             type="text"
             placeholder="Enter OTP"
             maxLength="6"
@@ -77,7 +78,7 @@ const TeacherOtp = () => {
           />
 
           <button type='submit'
-            onClick={(e)=>setOtp(e.targer.value)}
+            
             className="w-full bg-purple-600 hover:bg-purple-700 text-white py-2.5 rounded-lg transition duration-200"
           >
             Verify OTP
