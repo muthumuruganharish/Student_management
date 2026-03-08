@@ -13,6 +13,7 @@ import StudentEmailVerify from './Pages/Auth/Student/StudentEmailVerify'
 import TeacherVerifyEmail from './Pages/Auth/Teacher/TeacherVerifyEmail'
 import StudentResetPassword from './Pages/Auth/Student/StudentResetPassword'
 import TeacherReset from './Pages/Auth/Teacher/TeacherReset'
+import Profile from './Pages/Pages/Profile'
 
 
 const App = () => {
@@ -36,6 +37,7 @@ const App = () => {
           <Route path="/temail" element={<TeacherVerifyEmail />} />
           <Route path="/reset" element={<StudentResetPassword />} />
           <Route path="/treset" element={<TeacherReset/>} />
+          <Route path="/student-profile" element={<Profile/>}/>
 
 
 
