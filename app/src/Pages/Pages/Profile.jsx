@@ -1,8 +1,8 @@
 import React from 'react'
 import { Mail, GraduationCap, Hash, User } from "lucide-react";
-import ProfileHeader from '../Components/ProfileHeader';
-import ProfileCard from '../Components/ProfileCard';
-import Heading from '../Components/Heading';
+import ProfileHeader from '../Components/ProfileComponents/ProfileHeader';
+import ProfileCard from '../Components/ProfileComponents/ProfileCard';
+import Heading from '../Components/ProfileComponents/Heading';
 
 const Profile = () => {
     return (
