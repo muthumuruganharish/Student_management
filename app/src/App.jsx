@@ -14,6 +14,8 @@ import TeacherVerifyEmail from './Pages/Auth/Teacher/TeacherVerifyEmail'
 import StudentResetPassword from './Pages/Auth/Student/StudentResetPassword'
 import TeacherReset from './Pages/Auth/Teacher/TeacherReset'
 import Profile from './Pages/Pages/Profile'
+import Assignment from './Pages/Pages/Assignment'
+import Leave from './Pages/Pages/Leave'
 
 
 const App = () => {
@@ -38,6 +40,8 @@ const App = () => {
           <Route path="/reset" element={<StudentResetPassword />} />
           <Route path="/treset" element={<TeacherReset/>} />
           <Route path="/student-profile" element={<Profile/>}/>
+          <Route path='/assignments' element={<Assignment/>}/>
+          <Route path="/leave" element={<Leave/>}/>
 
 
 
