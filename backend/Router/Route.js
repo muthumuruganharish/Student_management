@@ -12,6 +12,7 @@ const{verifyEmail}=require("../Controller/Teachers/TeacherVerifyEmail")
 const{Otp}=require("../Controller/Teachers/TeacherOtp")
 const{tReset}=require("../Controller/Teachers/TeacherReset")
 const{fetchName}=require("../Controller/Teachers/TeacherData")
+const{leave}=require("../Controller/Students_DB/Leave")
 
 
 router.post("/teachersignup",createUser)
@@ -27,5 +28,7 @@ router.post("/totp",Otp)
 router.put("/treset",tReset)
 
 router.get("/leave",fetchName)
+router.post("/leave",leave)
+
 
 module.exports=router
