@@ -1,5 +1,5 @@
 import React from 'react'
-import Sidebar from '../Components/Dashboard/Sidebar'
+import Sidebar from '../../Components/Dashboard/Sidebar'
 
 const Assignment = () => {
   return (

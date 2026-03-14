@@ -15,6 +15,9 @@ const{fetchName}=require("../Controller/Teachers/TeacherData")
 const{leave}=require("../Controller/Students_DB/Leave")
 
 
+const {responseLeave}=require("../Controller/Teacher_DB/Leave")
+
+
 router.post("/teachersignup",createUser)
 router.post("/studentsignup",Students)
 router.post("/studentlogin",StudentsLogin)
@@ -29,6 +32,10 @@ router.put("/treset",tReset)
 
 router.get("/leave",fetchName)
 router.post("/leave",leave)
+
+router.get("/teacher-leave",responseLeave)
+
+
 
 
 module.exports=router

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import Sidebar from '../Components/Dashboard/Sidebar'
-import Axios from "../../Axios"
+import Sidebar from '../../Components/Dashboard/Sidebar'
+import Axios from "../../../Axios"
 
 const Leave = () => {
   
@@ -27,7 +27,7 @@ const Leave = () => {
   const leaveReq = async (e) => {
 
     try {
-      alert("clicked")
+      alert("Request Sent")
       
 
       const res = await Axios.post("/leave", {
