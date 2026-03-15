@@ -5,16 +5,20 @@ import Button from '../../../Components/Button';
 import { Mail, Lock, LogIn } from 'lucide-react';
 import { Navigate, useNavigate } from 'react-router-dom';
 import Axios from "../../../Axios"
+import { useContext } from 'react';
+import { StudentContext } from '../../Pages/Students/StudentContext';
+
 
 const StudentLogin = () => {
 
   const navigate= useNavigate()
-
+const {setStudentEmail}=useContext(StudentContext)
 
 
   const [reg,setReg]=useState("")
   const [email,setEmail]=useState("")
   const[password,setPassword]=useState("")
+
 
 
   const login=async(e)=>{
@@ -28,6 +32,7 @@ const StudentLogin = () => {
             email,
             password
         })
+        setStudentEmail(email)
         alert("Student login successfully")
 
         navigate("/")

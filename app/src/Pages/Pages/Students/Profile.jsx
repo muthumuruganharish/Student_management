@@ -4,12 +4,15 @@ import ProfileHeader from '../../Components/ProfileComponents/ProfileHeader';
 import ProfileCard from '../../Components/ProfileComponents/ProfileCard';
 import Heading from '../../Components/ProfileComponents/Heading';
 import Sidebar from '../../Components/Dashboard/Sidebar';
+import { useContext } from 'react';
+import { StudentContext } from './StudentContext';
 
 
 const Profile = () => {
+    const{studentEmail}=useContext(StudentContext)
     return (
 
-        <div className="min-h-screen bg-gray-50 p-8 ">
+        <div className="min-h-screen bg-gray-50 p-8  ">
 
             <div className='flex'>
                 <div>
@@ -26,7 +29,7 @@ const Profile = () => {
                         initials="H"
 
                     />
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 ">
 
                         <ProfileCard
                             icon={Hash}
@@ -38,7 +41,7 @@ const Profile = () => {
                         <ProfileCard
                             icon={Mail}
                             label="Email"
-                            value="student@email.com"
+                            value={studentEmail}
                             color="bg-indigo-50 text-indigo-600"
                         />
 

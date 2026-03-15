@@ -47,7 +47,7 @@ const TeacherLeave = () => {
               </h3>
 
               <span className="text-xs bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full">
-                Pending
+                new
               </span>
 
             </div>
@@ -64,18 +64,7 @@ const TeacherLeave = () => {
               <span className="font-semibold">📝 Message:</span> {i.letter}
             </p>
 
-            <div className="mt-4 flex gap-3">
-
-              <button className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded">
-                Approve
-              </button>
-
-              <button className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded">
-                Reject
-              </button>
-
-            </div>
-
+            
           </div>
 
         ))}
