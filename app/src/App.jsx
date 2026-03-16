@@ -19,6 +19,7 @@ import Leave from './Pages/Pages/Students/Leave'
 import TeacherLeave from './Pages/Pages/Teachers/TeacherLeave'
 import TeacherAssignment from './Pages/Pages/Teachers/TeacherAssignment'
 import TeacherProfile from './Pages/Pages/Teachers/TeacherProfile'
+import AssignmentDetail from './Pages/Components/Assignment/Teacher/AssignmentDetail'
 
 
 const App = () => {
@@ -50,6 +51,8 @@ const App = () => {
           <Route path="/teacher-profile" element={<TeacherProfile />} />
           <Route path="/teacher-assignments" element={<TeacherAssignment />} />
           <Route path="/teacher-leave" element={<TeacherLeave />} />
+
+          <Route path="/teacher-assignment/create-assignment" element={<AssignmentDetail/>}/>
 
 
 

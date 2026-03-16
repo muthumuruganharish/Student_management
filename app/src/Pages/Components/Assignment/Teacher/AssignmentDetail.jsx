@@ -1,0 +1,142 @@
+import React from 'react'
+import Tsidebar from '../../Dashboard/Teacher/Tsidebar'
+import Heading from './Heading'
+import CreateAssignment from './CreateAssignment'
+
+
+const AssignmentDetail = () => {
+    return (
+        <div>
+            <div className="flex bg-slate-50 min-h-screen">
+
+                <div>
+                    <Tsidebar />
+                </div>
+
+                <div className='p-6 ml-64  mb-8 w-full'>
+
+                    <div className='flex items-start justify-between'>
+
+                        <div>
+                            <Heading />
+                        </div>
+
+                        <div className=''>
+                            <CreateAssignment />
+
+                        </div>
+
+                    </div>
+
+
+
+                    {/* -----input card----- */}
+
+                    <div className='max-w-2xl mx-auto' >
+
+                        <div className="bg-white shadow-md rounded-xl p-6 max-w-2xl mt-6">
+
+                            <h2 className="text-xl font-semibold text-gray-800 mb-4">
+                                Create Assignment
+                            </h2>
+
+                            <div className="space-y-4">
+
+                                {/* Title */}
+                                <div>
+                                    <label className="block text-sm font-medium text-gray-700">
+                                        Title
+                                    </label>
+                                    <input
+                                        type="text"
+                                        placeholder="Enter assignment title"
+                                        className="w-full mt-1 border rounded-lg p-2 focus:ring-2 focus:ring-indigo-500 outline-none"
+                                    />
+                                </div>
+
+                                {/* Subject */}
+                                <div>
+                                    <label className="block text-sm font-medium text-gray-700">
+                                        Subject
+                                    </label>
+                                    <input
+                                        type="text"
+                                        placeholder="Enter subject"
+                                        className="w-full mt-1 border rounded-lg p-2 focus:ring-2 focus:ring-indigo-500 outline-none"
+                                    />
+                                </div>
+
+                                {/* Description */}
+                                <div>
+                                    <label className="block text-sm font-medium text-gray-700">
+                                        Description
+                                    </label>
+                                    <textarea
+                                        rows="3"
+                                        placeholder="Enter assignment description"
+                                        className="w-full mt-1 border rounded-lg p-2 focus:ring-2 focus:ring-indigo-500 outline-none"
+                                    />
+                                </div>
+
+                                {/* Due Date */}
+                                <div>
+                                    <label className="block text-sm font-medium text-gray-700">
+                                        Due Date
+                                    </label>
+                                    <input
+                                        type="date"
+                                        className="w-full mt-1 border rounded-lg p-2 focus:ring-2 focus:ring-indigo-500 outline-none"
+                                    />
+                                </div>
+
+                                {/* Total Marks */}
+                                <div>
+                                    <label className="block text-sm font-medium text-gray-700">
+                                        Total Marks
+                                    </label>
+                                    <input
+                                        type="number"
+                                        placeholder="Enter marks"
+                                        className="w-full mt-1 border rounded-lg p-2 focus:ring-2 focus:ring-indigo-500 outline-none"
+                                    />
+                                </div>
+
+                                {/* File Upload */}
+                                <div>
+                                    <label className="block text-sm font-medium text-gray-700">
+                                        Upload File
+                                    </label>
+                                    <input
+                                        type="file"
+                                        className="w-full mt-1"
+                                    />
+                                </div>
+
+                                {/* Submit Button */}
+                                <button className="w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition">
+                                    Submit Assignment
+                                </button>
+
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+
+
+            </div>
+
+        </div>
+    )
+}
+
+export default AssignmentDetail

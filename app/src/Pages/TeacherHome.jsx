@@ -14,6 +14,7 @@ const TeacherHome = () => {
       navigate("/teacherlogin")
       
     }
+    navigate("/teacherhome")
 
   },[])
 
