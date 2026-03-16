@@ -1,8 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Tsidebar from "./Components/Dashboard/Teacher/Tsidebar";
 import Tnavbar from "./Components/Dashboard/Teacher/Tnavbar";
+import { useNavigate } from "react-router-dom";
 
 const TeacherHome = () => {
+  const navigate=useNavigate()
+
+  useEffect(()=>{
+
+    const token= localStorage.getItem("token")
+    
+    if(!token){
+      navigate("/teacherlogin")
+      
+    }
+
+  },[])
+
+
   return (
     <div className="flex bg-slate-50 min-h-screen">
 

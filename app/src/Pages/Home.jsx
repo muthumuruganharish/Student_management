@@ -1,7 +1,18 @@
+import { useEffect } from "react";
 import Navbar from "./Components/Dashboard/Navbar";
 import Sidebar from "./Components/Dashboard/Sidebar";
 
 const Home = () => {
+  useEffect(()=>{
+    const token = localStorage.getItem("token")
+
+    if(!token){
+      window.location.href="/studentlogin"
+    }
+
+
+
+  },[])
   return (
     <div className="flex bg-slate-50 min-h-screen">
 

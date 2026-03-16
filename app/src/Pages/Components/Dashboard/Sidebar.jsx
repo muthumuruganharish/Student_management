@@ -9,6 +9,12 @@ import {
 
 const Sidebar = () => {
   const navigate = useNavigate();
+  const logout=()=>{
+
+    localStorage.removeItem("token")
+    navigate("/studentlogin")
+
+  }
 
   return (
     <aside className="w-64 bg-white border-r flex flex-col h-screen fixed left-0 top-0">
@@ -54,7 +60,7 @@ const Sidebar = () => {
       </nav>
 
       <div className="p-4 border-t">
-        <button className="flex items-center gap-3 text-red-500">
+        <button onClick={logout} className="flex items-center gap-3 text-red-500">
           <LogOut className="w-5 h-5"/>
           Logout
         </button>
