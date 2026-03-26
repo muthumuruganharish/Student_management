@@ -35,6 +35,7 @@ const AssignmentDetail = () => {
                 totalMarks,
                 file
             })
+            navigate("/teacher-assignment/created")
 
 
 

@@ -20,11 +20,13 @@ const StudentLogin = () => {
         e.preventDefault();
 
         try {
+            
             const res = await Axios.post("/studentlogin", {
                 reg,
                 email,
                 password
             });
+            localStorage.setItem("token", res.data.token);
 
             // ✅ update global auth
             setStudentEmail(email);
@@ -78,9 +80,26 @@ const StudentLogin = () => {
                     <Button type="submit" className="w-full">
                         Log In
                     </Button>
+                    <div className="relative my-8">
+                        <div className="absolute inset-0 flex items-center">
+                            <span className="w-full border-t border-gray-200"></span>
+                        </div>
+                        <div className="relative flex justify-center text-xs uppercase">
+                            <span className="bg-white px-2 text-gray-500">Or continue with</span>
+                        </div>
+                    </div>
+
+                    <p className="text-center text-gray-600 mt-6">
+                        Already have an account?{' '}
+                        <a href="#" onClick={() => navigate("/studentsignup")} className="font-semibold text-blue-600 hover:text-blue-700 underline-offset-4 hover:underline">
+                            Signup
+                        </a>
+                    </p>
+
+
                 </form>
             </Card>
-        </div>
+        </div >
     );
 };
 

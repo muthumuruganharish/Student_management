@@ -11,6 +11,7 @@ const Leave = () => {
 
   const [teacher, setTeacher] = useState([])//here we use array due to map function
   const [selectedTeacher, setSelectedTeacher] = useState("")
+  
 
   useEffect(() => {
 

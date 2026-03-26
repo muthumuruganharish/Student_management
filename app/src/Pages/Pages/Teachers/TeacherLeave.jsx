@@ -7,6 +7,7 @@ const TeacherLeave = () => {
   const [leaveData, setLeaveData] = useState([])
 
   useEffect(() => {
+      console.log("TOKEN 👉", localStorage.getItem("token"));
 
     const fetchData = async () => {
 
@@ -14,7 +15,7 @@ const TeacherLeave = () => {
       console.log("FULL RESPONSE:", res)
       console.log("DATA:", res.data)
 
-      setLeaveData(res.data.user)
+      setLeaveData(res.data.leaves)
 
     }
 

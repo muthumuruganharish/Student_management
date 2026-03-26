@@ -21,15 +21,19 @@ const {fetchName}=require("../Controller/Teachers/TeacherData")
 const {leave}=require("../Controller/Students_DB/Leave")
 const {responseLeave}=require("../Controller/Teacher_DB/Leave")
 
+const{Assignment}=require("../Controller/Teacher_DB/Assignment")
+const{StudentAssignment}=require("../Controller/Students_DB/StudentAssignment")
+const Middleware=require("../Middleware/Middleware")
 
 
 
 
-router.post("/teachersignup", createUser)
-router.post("/studentsignup", Students)
 
-router.post("/studentlogin", StudentsLogin)
-router.post("/teacherlogin", TeacherLogin)
+router.post("/teachersignup", authMiddleware,createUser)
+router.post("/studentsignup", authMiddleware,Students)
+
+router.post("/studentlogin",authMiddleware, StudentsLogin)
+router.post("/teacherlogin",authMiddleware, TeacherLogin)
 
 router.post("/semail", sendOtp)
 router.post("/sotp", verifyOtp)
@@ -40,9 +44,12 @@ router.post("/totp", Otp)
 router.put("/treset", tReset)
 
 router.get("/leave",  fetchName)
-router.post("/leave",  leave)
+router.post("/leave",Middleware,  leave)
 
-router.get("/teacher-leave",  responseLeave)
+router.get("/teacher-leave", Middleware, responseLeave)
+router.post("/teacher-assignment/create-assignment",Assignment)
+router.get("/assignment",StudentAssignment)
+
 
 
 // router.get("/leave", authMiddleware, fetchName)

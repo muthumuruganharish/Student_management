@@ -16,7 +16,7 @@ const TeacherAssignment = new moongose.Schema({
         required: true,
         trim: true
     },
-    data: {
+    date: {
         type: String,
         required: true,
         trim: true
@@ -29,7 +29,7 @@ const TeacherAssignment = new moongose.Schema({
     file: {
 
         type: String,
-        required: true,
+        
 
 
 

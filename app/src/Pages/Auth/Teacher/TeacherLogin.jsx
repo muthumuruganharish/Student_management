@@ -24,6 +24,7 @@ const TeacherLogin = () => {
                 email,
                 password
             })
+            localStorage.setItem("token", res.data.token);
 
             alert("Teacher login successfully")
             navigate("/teacherhome")
