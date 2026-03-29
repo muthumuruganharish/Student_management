@@ -51,12 +51,13 @@ router.get("/leave",  fetchName)
 
 
 router.post("/leave", Middleware, leave)
-
 router.get("/teacher-leave",Middleware, responseLeave)
+
+
 router.post("/teacher-assignment/create-assignment",Assignment)
 router.get("/assignment",StudentAssignment)
 
-router.get("/teacher-marks",  studentsName)
+router.get("/teacher-marks", Middleware ,studentsName)
 
 
 

@@ -9,6 +9,7 @@ const TeacherHome = () => {
   useEffect(()=>{
 
     const token= localStorage.getItem("token")
+    // console.log("this is teacher token:",token)
     
     if(!token){
       navigate("/teacherlogin")

@@ -1,6 +1,6 @@
 const Student = require("../../Model/Students")
 
-const studentsName = async (req, res) => {
+const   studentsName = async (req, res) => {
   try {
     console.log("USER 👉", req.user)
 
