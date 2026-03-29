@@ -36,7 +36,7 @@ const StudentSignup = () => {
         })
 
         alert("account created for Students")
-        navigate("/")
+        navigate("/studentlogin")
       }
 
       catch (err) {

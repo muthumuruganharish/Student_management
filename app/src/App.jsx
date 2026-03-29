@@ -21,6 +21,7 @@ import TeacherAssignment from './Pages/Pages/Teachers/TeacherAssignment'
 import TeacherProfile from './Pages/Pages/Teachers/TeacherProfile'
 import AssignmentDetail from './Pages/Components/Assignment/Teacher/AssignmentDetail'
 import TeacherAssignmentSuccess from './Pages/Pages/Teachers/TeacherAssignmentSuccess'
+import Marks from './Pages/Pages/Teachers/Marks'
 
 
 const App = () => {
@@ -31,9 +32,10 @@ const App = () => {
 
         <Routes>
 
-          
-          <Route path="/" element={<Home />} />
-          <Route path="/role" element={<RoleSelection />} />
+          <Route path="/" element={<RoleSelection />} />
+          <Route path="/studentHome" element={<Home />} />          
+          {/* <Route path="/" element={<Home />} />
+          <Route path="/role" element={<RoleSelection />} /> */}
           <Route path="/Studentsignup" element={<StudentSignup />} />
           <Route path="/teachersignup" element={<TeacherSignup />} />
           <Route path="/teacherhome" element={<TeacherHome />} />
@@ -55,6 +57,8 @@ const App = () => {
 
           <Route path="/teacher-assignment/create-assignment" element={<AssignmentDetail/>}/>
           <Route path="/teacher-assignment/created" element={<TeacherAssignmentSuccess/>}/>
+
+          <Route path='/teacher-marks' element={<Marks/>}/>
 
 
 

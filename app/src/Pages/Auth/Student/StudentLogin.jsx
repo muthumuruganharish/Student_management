@@ -33,7 +33,8 @@ const StudentLogin = () => {
 
             alert("Student login successfully");
 
-            navigate("/");
+            navigate("/studenthome");
+            console.log("LOGIN RESPONSE:", res.data);
         } catch (err) {
             console.log(err);
             alert(err.response?.data?.message || "Something went wrong");

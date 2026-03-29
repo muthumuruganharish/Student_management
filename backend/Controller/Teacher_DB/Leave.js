@@ -2,9 +2,7 @@ const data=require("../../Model/Students_DB")
 
 const responseLeave=async(req,res)=>{
     try{
-        console.log("API HIT ✅");
-        console.log("req.user:",req.users)
-        
+       
         const teacherId=req.user.id
         
 

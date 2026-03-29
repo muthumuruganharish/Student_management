@@ -3,19 +3,26 @@ import Sidebar from '../../Components/Dashboard/Sidebar'
 import Axios from "../../../Axios"
 
 const Leave = () => {
+
   
- 
+
+
   const [subject, setSubject] = useState("")
   const [letter, setLetter] = useState("")
-  const[from,setFrom]=useState("")
+  const [from, setFrom] = useState("")
 
   const [teacher, setTeacher] = useState([])//here we use array due to map function
   const [selectedTeacher, setSelectedTeacher] = useState("")
-  
+
 
   useEffect(() => {
 
     const fetchData = async () => {
+
+
+
+
+
       const res = await Axios.get("/leave")
       setTeacher(res.data.user)
 
@@ -26,19 +33,44 @@ const Leave = () => {
   }, [])
 
   const leaveReq = async (e) => {
+    e.preventDefault();
+
+
 
     try {
-      alert("Request Sent")
-      
+
+      const token = localStorage.getItem("token");
+      console.log("student token:",token)
+
+      if (!token) {
+        return alert("please login and come")
+
+      }
 
       const res = await Axios.post("/leave", {
         from,
         selectedTeacher,
         subject,
         letter
+      }, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
       })
 
 
+
+
+      alert("Request Sent")
+
+
+
+
+
+      setFrom("");
+      setSelectedTeacher("");
+      setSubject("");
+      setLetter("");
 
 
     }
@@ -70,12 +102,12 @@ const Leave = () => {
         {/* From */}
         <div className="bg-white shadow-md rounded-xl p-8 max-w-2xl">
 
-           <div className="mb-6">
+          <div className="mb-6">
             <label className="block mb-2 font-medium text-gray-600">
               From
             </label>
             <input
-              onChange={(e)=>setFrom(e.target.value)}
+              onChange={(e) => setFrom(e.target.value)}
               type="text"
               placeholder="Enter subject"
               className="w-full border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
@@ -83,7 +115,7 @@ const Leave = () => {
           </div>
 
 
-         {/* Teacher Select */}
+          {/* Teacher Select */}
           <div className="mb-6">
             <label className="block mb-2 font-medium text-gray-600">
               To
@@ -110,14 +142,14 @@ const Leave = () => {
               Subject
             </label>
             <input
-              onChange={(e)=>setSubject(e.target.value)}
+              onChange={(e) => setSubject(e.target.value)}
               type="text"
               placeholder="Enter subject"
               className="w-full border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
           </div>
 
-       
+
 
 
           {/* Message */}
@@ -127,7 +159,7 @@ const Leave = () => {
             </label>
 
             <textarea
-              onChange={(e)=>setLetter(e.target.value)}
+              onChange={(e) => setLetter(e.target.value)}
               rows="6"
               placeholder="Write your permission request..."
               className="w-full border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-400"

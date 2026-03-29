@@ -49,7 +49,8 @@ const Sidebar = () => {
           Leave Permission
         </div>
 
-        <div
+        
+         <div
           onClick={() => navigate("/student-profile")}
           className="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-blue-50 cursor-pointer"
         >

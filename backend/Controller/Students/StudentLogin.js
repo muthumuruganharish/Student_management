@@ -1,58 +1,63 @@
-const sData=require("../../Model/Students")
-const bycrypt=require("bcryptjs")
-const jwt=require("jsonwebtoken")
-    const StudentsLogin=async(req,res)=>{
+const sData = require("../../Model/Students")
+const bycrypt = require("bcryptjs")
+const jwt = require("jsonwebtoken")
+const StudentsLogin = async (req, res) => {
 
-        try{
+    try {
 
-            
-        const{reg,email,password}=req.body
+
+        const { reg, email, password } = req.body
         // console.log(req.body)
-           
 
-
-        const dataExists=await sData.findOne({email})
-        if(!dataExists){
+        const dataExists = await sData.findOne({ email })
+        if (!dataExists) {
             return res.status(400).json({
-                message:"email not found"
+                message: "email not found"
             })
 
 
         }
 
-        if(dataExists.reg!=reg){
+        if (dataExists.reg != reg) {
             return res.status(400).json({
-                message:"wrong register number"
+                message: "wrong register number"
             })
         }
 
-         const hash=await bycrypt.compare(password,dataExists.password)
+        const hash = await bycrypt.compare(password, dataExists.password)
 
-        if(!hash){
+        if (!hash) {
             return res.status(400).json({
-                message:"wrong password"
+                message: "wrong password"
             })
         }
+
+        const token = jwt.sign(
+            { id: dataExists._id, role: "student" },
+            process.env.JWT_SECRET,
+            { expiresIn: "1d" }
+        );
 
         res.status(200).json({
 
-            message:"login successfully"
+            message: "login successfully",
+            token: token
 
         })
 
 
-        }
+    }
 
-        catch(err){
+    catch (err) {
 
-            res.status(500).json({
-                message:err.message
-            })
-
-        }
-
-
-
+        res.status(500).json({
+            message: err.message
+        })
 
     }
-    module.exports={StudentsLogin}
+
+
+
+
+}
+module.exports = { StudentsLogin }
