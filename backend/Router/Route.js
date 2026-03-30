@@ -27,6 +27,7 @@ const Middleware=require("../Middleware/Middleware")
 
 
 const{studentsName}=require("../Controller/Teacher_DB/studentsName")
+const{StudentMarkSubmit}=require("../Controller/Teacher_DB/StudentMarkSubmit")
 
 
 
@@ -58,6 +59,9 @@ router.post("/teacher-assignment/create-assignment",Assignment)
 router.get("/assignment",StudentAssignment)
 
 router.get("/teacher-marks", Middleware ,studentsName)
+router.post("/teacher-marks",Middleware,StudentMarkSubmit)
+
+
 
 
 
