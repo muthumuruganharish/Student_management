@@ -29,6 +29,10 @@ const Middleware=require("../Middleware/Middleware")
 const{studentsName}=require("../Controller/Teacher_DB/studentsName")
 const{StudentMarkSubmit}=require("../Controller/Teacher_DB/StudentMarkSubmit")
 
+const {showProfile}=require("../Controller/Teacher_DB/TeacherProfile")
+
+const{getMarks}=require("../Controller/Students_DB/StudentHome")
+
 
 
 
@@ -61,6 +65,12 @@ router.get("/assignment",StudentAssignment)
 router.get("/teacher-marks", Middleware ,studentsName)
 router.post("/teacher-marks",Middleware,StudentMarkSubmit)
 
+router.get("/teacher-profile",Middleware,showProfile)
+router.get("/studenthome",Middleware,getMarks)
+// router.get("/teacher-profile", Middleware, (req, res) => {
+//     console.log("🔥 PROFILE ROUTE HIT");
+//     res.send("OK");
+// });
 
 
 

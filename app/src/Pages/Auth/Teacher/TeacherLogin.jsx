@@ -6,10 +6,13 @@ import { ShieldCheck, LogIn } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import  Axios  from '../../../Axios';
+import { TeacherContext } from '../../Pages/Teachers/TeacherContext';
+import { useContext } from 'react';
 
 const TeacherLogin = () => {
 
     const navigate = useNavigate()
+    const{teacherEmail,setTeacherEmail}=useContext(TeacherContext)
 
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
@@ -25,6 +28,9 @@ const TeacherLogin = () => {
                 password
             })
             localStorage.setItem("token", res.data.token);
+            setTeacherEmail(email)
+            console.log("teacher email:",teacherEmail)
+            
 
             alert("Teacher login successfully")
             navigate("/teacherhome")

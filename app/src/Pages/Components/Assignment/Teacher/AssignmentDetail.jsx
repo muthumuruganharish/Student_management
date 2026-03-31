@@ -55,15 +55,15 @@ const AssignmentDetail = () => {
 
     return (
         <div>
-            <div className="flex bg-slate-50 min-h-screen">
+            <div className="flex flex-col md:flex-row bg-slate-50 min-h-screen pb-16 md:pb-0 w-full">
 
-                <div>
+                <div className="flex-none z-50">
                     <Tsidebar />
                 </div>
 
-                <div className='p-6 ml-64  mb-8 w-full'>
+                <div className='p-4 sm:p-6 md:ml-64 mb-8 w-full'>
 
-                    <div className='flex items-start justify-between'>
+                    <div className='flex flex-col sm:flex-row items-center sm:items-start justify-between gap-4 sm:gap-0'>
 
                         <div>
                             <Heading />

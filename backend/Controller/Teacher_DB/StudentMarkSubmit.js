@@ -3,9 +3,9 @@ const data = require("../../Model/StudentsMark")
 const StudentMarkSubmit = async (req, res) => {
 
     try {
-        console.log("api hit")
+        // console.log("api hit")
         const { selectedStudent, cgpa, attendance } = req.body
-        console.log(req.body)
+        // console.log(req.body)
         const user = await data.findOneAndUpdate(
             { selectedStudent },
             {

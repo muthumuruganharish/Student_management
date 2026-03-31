@@ -4,18 +4,20 @@ import Tsidebar from "../../Components/Dashboard/Teacher/Tsidebar"
 import Heading from '../../Components/Assignment/Teacher/Heading'
 import CreateAssignment from '../../Components/Assignment/Teacher/CreateAssignment'
 
-const TeacherAssignmentSuccess = () => {
+    const TeacherAssignmentSuccess = () => {
     return (
-        <div className="flex bg-slate-50 min-h-screen">
+        <div className="flex flex-col md:flex-row bg-slate-50 min-h-screen pb-16 md:pb-0">
 
             {/* Sidebar */}
-            <Tsidebar />
+            <div className="flex-none z-50">
+                <Tsidebar />
+            </div>
 
             {/* Main Content */}
-            <div className="p-6 ml-64 w-full">
+            <div className="p-4 md:p-6 md:ml-64 w-full">
 
                 {/* Top Section */}
-                <div className="flex items-center justify-between mb-8">
+                <div className="flex flex-col xl:flex-row items-center justify-between mb-8 gap-6">
                     <Heading />
                     <CreateAssignment />
                 </div>

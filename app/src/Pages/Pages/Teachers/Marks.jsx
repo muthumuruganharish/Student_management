@@ -70,14 +70,14 @@ const Marks = () => {
 }
 
     return (
-        <div className="flex h-screen bg-slate-50 overflow-hidden font-sans">
+        <div className="flex flex-col md:flex-row h-screen bg-slate-50 overflow-hidden font-sans pb-16 md:pb-0">
             {/* Sidebar */}
-            <div className="w-64 flex-shrink-0 shadow-lg z-10 bg-white">
+            <div className="flex-none z-50">
                 <Tsidebar />
             </div>
 
             {/* Main Content */}
-            <div className="flex-1 flex flex-col h-full relative">
+            <div className="flex-1 flex flex-col h-full relative md:ml-64 w-full">
                 {/* Header */}
                 <header className="bg-white px-8 py-6 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.1)] z-0 border-b border-gray-100 flex items-center justify-between">
                     <div>

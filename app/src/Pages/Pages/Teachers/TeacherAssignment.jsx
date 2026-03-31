@@ -5,13 +5,13 @@ import CreateAssignment from '../../Components/Assignment/Teacher/CreateAssignme
 
 const TeacherAssignment = () => {
   return (
-    <div className="flex bg-slate-50 min-h-screen">
+    <div className="flex flex-col md:flex-row bg-slate-50 min-h-screen pb-16 md:pb-0">
 
-      <div>
+      <div className="flex-none z-50">
         <Tsidebar/>
       </div>
 
-      <div className='p-6 ml-64 flex items-start justify-between mb-8 w-full'>
+      <div className='p-4 md:p-6 md:ml-64 flex flex-col xl:flex-row items-center xl:items-start justify-between mb-8 w-full gap-6'>
         <div>
            <Heading/>
         </div>

@@ -87,15 +87,15 @@ const Leave = () => {
 
 
   return (
-    <div className="flex bg-gray-50 min-h-screen">
+    <div className="flex flex-col md:flex-row bg-gray-50 min-h-screen pb-16 md:pb-0">
 
       {/* Sidebar */}
-      <div className="w-64">
+      <div className="flex-none z-50">
         <Sidebar />
       </div>
 
       {/* Main Content */}
-      <form onSubmit={leaveReq} className="flex-1 p-8">
+      <form onSubmit={leaveReq} className="flex-1 md:ml-64 p-4 sm:p-6 md:p-8 w-full transition-all duration-300">
 
         <h1 className="text-2xl font-semibold mb-6">Leave Permission</h1>
 

@@ -21,36 +21,33 @@ const TeacherHome = () => {
 
 
   return (
-    <div className="flex bg-slate-50 min-h-screen">
+    <div className="flex flex-col md:flex-row bg-slate-50 min-h-screen pb-16 md:pb-0">
 
-      <Tsidebar />
+      <div className="flex-none z-50">
+        <Tsidebar />
+      </div>
 
-      <main className="ml-64 flex-1">
+      <main className="md:ml-64 flex-1 w-full">
 
         <Tnavbar title="Dashboard" />
 
-        <div className="p-8">
+        <div className="p-4 md:p-8">
 
-          <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white p-8 rounded-2xl mb-8">
+          <div className="bg-indigo-600 text-white p-8 rounded-3xl mb-8 shadow-md">
             <h2 className="text-3xl font-bold">Welcome Teacher 👋</h2>
-            <p>You have 3 assignments due this week.</p>
+            <p className="mt-2 text-indigo-100 text-base">You have 3 assignments due this week.</p>
           </div>
 
-          <div className="grid grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-            <div className="bg-blue-50 p-6 rounded-xl shadow-sm">
-              <p className="text-gray-600">GPA</p>
-              <h3 className="text-2xl font-bold text-blue-600">3.8</h3>
+            <div className="bg-indigo-50 p-6 rounded-2xl shadow-sm">
+              <p className="text-gray-600 font-medium tracking-wide">PENDING REVIEW</p>
+              <h3 className="text-4xl font-bold text-indigo-600 mt-2">3</h3>
             </div>
 
-            <div className="bg-green-50 p-6 rounded-xl shadow-sm">
-              <p className="text-gray-600">Attendance</p>
-              <h3 className="text-2xl font-bold text-green-600">94%</h3>
-            </div>
-
-            <div className="bg-purple-50 p-6 rounded-xl shadow-sm">
-              <p className="text-gray-600">Courses</p>
-              <h3 className="text-2xl font-bold text-purple-600">6</h3>
+            <div className="bg-slate-50 p-6 rounded-2xl shadow-sm border border-slate-100">
+              <p className="text-gray-600 font-medium tracking-wide">LEAVE REQUESTS</p>
+              <h3 className="text-4xl font-bold text-slate-800 mt-2">0</h3>
             </div>
 
           </div>
